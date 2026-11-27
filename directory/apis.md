@@ -245,6 +245,7 @@ x402-enabled APIs and production services. No API keys. No accounts. Pay USDC pe
 - [Laso Finance](https://laso.finance/.well-known/x402) — Prepaid US cards, reloadable card balances and catalog gift cards bought with USDC over x402 on Base or Solana. Example: `GET /fund-card-balance`.
 - [StockDatum](https://api.stockdatum.com/v1/form4?ticker=AAPL) — Structured SEC EDGAR records (Form 4, 8-K/6-K, Form 144, insider purchase clusters) with a source-filing link per row, $0.02 per call ($0.03 clusters) in USDC on Base. Example: `GET /v1/form4?ticker=AAPL`.
 - [BeliefState](https://beliefstate.ai/v1/research) — Returns dated, source-linked investor theses, catalysts and risks for a covered stock ticker via x402 for 0.02 USDC per brief on Base. Example: `POST /v1/research/get_brief {"ticker":"NBIS","detail":"overview"}`.
+- [SiftingIO](https://x402.sifting.io/.well-known/x402) — Real-time and historical market data for forex (incl. TRY pairs), crypto, commodities and metals and US stocks, plus SEC fundamentals, technical signals, market hours and the US economic calendar. Its manifest lists 41 GET routes, from $0.002 to $0.02 USDC per call on Base, no API key; 4xx/5xx responses are not charged. Example: `GET /v1/last/trade/forex/USDTRY` ($0.002).
 
 ## Web & Geospatial
 
