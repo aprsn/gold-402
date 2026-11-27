@@ -52,6 +52,7 @@ Dates for every entry (first failed knock, last answer, returns) are in [24klabs
 - [Tollex](https://api.tollex.org/tools/chain_get_block) — Robinhood Chain mainnet data for agents (blocks, transactions, logs, balances, USDG and stock tokens; 34 capabilities) paid per call over x402 v2 in USDC on Base or USDG on Robinhood Chain, each response with a signed execution receipt. Call with `POST`.
 - [DevX Multichain Balances](https://wallet-balances.nextill-pos.workers.dev/v1/balances) — Native and major-token balances (USDC, USDT, DAI, EURC, WETH, WBTC/cbBTC) for an EVM, Solana and/or Tron address across Base, Ethereum, Arbitrum, Optimism, Polygon, Avalanche, BNB Chain, Solana and Tron in one call, with block numbers and a stablecoin total, for $0.002 USDC on Base via x402. Example: `GET /v1/balances?address=0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&chains=base,ethereum`. ([OpenAPI](https://wallet-balances.nextill-pos.workers.dev/openapi.json))
 - [DevX Token Snapshot](https://token-snapshot.nextill-pos.workers.dev/v1/snapshot) — ERC-20 USD price, FDV, total DEX liquidity, top pools and contract risk flags (proxy, owner, mint, blacklist, fees) on 7 EVM chains from live on-chain reads, for $0.003 USDC on Base via x402. Example: `GET /v1/snapshot?token=0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed&chain=base`. ([OpenAPI](https://token-snapshot.nextill-pos.workers.dev/openapi.json))
+- [AuthiChain Signal](https://signal.authichain.com/api/x402/discovery) — Ranked Base launchpad tape (last rejections, LP, and bytecode) for 0.01 USDC on Base via x402 v2. Unpaid GET returns HTTP 402. ([Manifest](https://signal.authichain.com/.well-known/x402.json)) ([Offer](https://signal.authichain.com/offer)) ([OpenAPI](https://signal.authichain.com/openapi.json)) ([llms.txt](https://signal.authichain.com/llms.txt))
 
 ### Data & Research
 
@@ -114,6 +115,7 @@ Dates for every entry (first failed knock, last answer, returns) are in [24klabs
 - [dotrockets Agent Tools](https://x402.dotrockets.com/.well-known/x402.json) — A mixed toolbox: a live geophysics snapshot (KP index, Schumann resonance, solar wind), an AI-visibility score for a domain, screenshots, scraping and search. Its manifest lists eight routes, from $0.04 USDC per call on Base. Example: `GET /v1/cosmic` ($0.08).
 - [webcap](https://webcap.shoutsid.fyi/.well-known/x402) — Web capture API with seven pay-per-call routes: page screenshots, structured content extraction, SEO audits, site mapping, scroll-capture video, and AI visual analysis, $0.001-$0.01 USDC on Base via x402 with no API keys. Example: `POST /v1/x402/capture {"url":"https://example.com"}`.
 - [Audit Alpha](https://135-181-53-91.sslip.io/.well-known/x402) — Returns bounded static-HTML landing-page findings and suggested fixes for copy, calls to action, and accessibility, paid per request in USDC on Base.
+- [Vend API Merchant](https://extract.paypercall.dev) — Pay-per-call web intelligence settled in Nano (XNO), the feeless rail: URL-to-Markdown extraction, link check (status/redirect/time), domain intelligence (WHOIS/DNS/headers), web search, IP geolocation, nano-account info, YouTube transcripts, PDF text extraction, screenshot, browser render, CSS-selector extraction, page metadata, HTML table extraction, AI-jobs search, wiki summary, arXiv paper, HN feed, address verdict, and x402-lint (live-verify any x402 listing). 22+ live endpoints answer a valid x402 v2 402 challenge on `nano:mainnet`, 0.0001–0.0005 XNO per call (≈<$0.01), no signup, no API keys, error responses not billed. ([Manifest](https://extract.paypercall.dev/.well-known/x402)) ([Docs](https://extract.paypercall.dev/)) ([OpenAPI](https://extract.paypercall.dev/openapi.json)) ([llms.txt](https://extract.paypercall.dev/llms.txt))
 
 ## ecosystem
 
@@ -159,6 +161,10 @@ Dates for every entry (first failed knock, last answer, returns) are in [24klabs
 - [Calmops: x402 Protocol Complete Guide 2026](https://calmops.com/web3/x402-protocol-programmable-payments-ai-agents-2026/) — Programmable payments for AI agents guide.
 - [Lushbinary: x402 & EmDash Content Monetization](https://lushbinary.com/blog/x402-emdash-content-monetization-ai-agent-era-2026/) — x402 + Cloudflare EmDash as the content monetization stack for the AI era.
 - [How x402 paid links work (Payfirst)](https://www.payfirst.app/guides/x402-paid-links) — Guide to x402 V2 payment headers, URL delivery, buyer-client requirements, and retry handling when settlement is uncertain.
+
+### Quick Start Guides
+
+- [BridgeNode Solana x402 Quickstart](https://github.com/bridgenode-ai/bridgenode-skill/blob/main/examples/README.md) — Step-by-step walkthrough that teaches the x402 payment flow on Solana: trigger the 402, sign a USDC transfer (fee-sponsored, no SOL needed), retry with PAYMENT-SIGNATURE, get the 200. Curl + TypeScript + Python examples, from first payment to SDK usage.
 
 ## market-data
 
